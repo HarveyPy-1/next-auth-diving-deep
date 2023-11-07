@@ -12,10 +12,17 @@ const UserForm = () => {
 		const value = e.target.value;
 		const name = e.target.name;
 
-		setFormData((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
+		if (name === "email") {
+			setFormData((prevState) => ({
+				...prevState,
+				[name]: value.toLowerCase(),
+			}));
+		} else {
+			setFormData((prevState) => ({
+				...prevState,
+				[name]: value,
+			}));
+		}
 	};
 
 	const handleSubmit = async (e) => {
@@ -46,6 +53,7 @@ const UserForm = () => {
 				<input
 					type="text"
 					id="name"
+                    name="fullname"
 					onChange={handleChange}
 					required={true}
 					value={formData.name}
@@ -54,7 +62,8 @@ const UserForm = () => {
 
 				<label>Email</label>
 				<input
-					type="text"
+					type="email"
+                    name="email"
 					id="email"
 					onChange={handleChange}
 					required={true}
@@ -66,6 +75,7 @@ const UserForm = () => {
 				<input
 					type="password"
 					id="password"
+                    name="password"
 					onChange={handleChange}
 					required={true}
 					value={formData.password}
