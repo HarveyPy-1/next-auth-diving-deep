@@ -1,20 +1,21 @@
-import {getServerSession} from "next-auth"
+import { getServerSession } from "next-auth";
 import { options } from "../api/auth/[...nextauth]/options";
-import {redirect} from "next/navigation"
-
+import { redirect } from "next/navigation";
 
 const Member = async () => {
 	// Check if there's an active session
-	const session = await getServerSession(options)
+	const session = await getServerSession(options);
 
 	if (!session) {
-		redirect("/api/auth/signin?callbackUrl=/Member")
+		redirect("/api/auth/signin?callbackUrl=/Member");
 	}
 	return (
 		<div>
 			<h1>Member Server Session</h1>
 			<p>{session?.user?.email}</p>
 			<p>{session?.user?.role}</p>
+			<br />
+			<p className="text-green-500">You were authenticated server-side!</p>
 		</div>
 	);
 };
