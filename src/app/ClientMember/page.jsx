@@ -12,6 +12,7 @@ export const AuthProvider = ({children}) => {
 
 
 const ClientMember = () => {
+	// Don't forget, middleware can replace all of this
 	const { data: session } = useSession({
 		required: true,
 		onUnauthenticated() {
