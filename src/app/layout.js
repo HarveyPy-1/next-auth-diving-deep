@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<body className="bg-gray-100">
 				<NavigationBar />
-				<div class="m-2">{children}</div>
+				<div className="m-2">{children}</div>
 			</body>
 		</html>
 	);

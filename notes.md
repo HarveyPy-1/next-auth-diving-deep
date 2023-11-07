@@ -3,3 +3,4 @@
 
 - You need the route.js/route.ts but you may also have the options.js/ts
 
+- To generate a random secure secret, you can type: openssl rand -base64 32
