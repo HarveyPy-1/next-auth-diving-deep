@@ -11,7 +11,7 @@ export const options = {
 				//creating roles (Admin)
 				let userRole = "Github User";
 				if (profile?.email == "don4dolex@gmail.com") {
-					userRole = "admin";
+					userRole = "Administrator";
 				}
 
 				return {
@@ -25,7 +25,9 @@ export const options = {
 		GoogleProvider({
 			profile(profile) {
 				console.log("Google Profile: ", profile);
-				// No role for google user
+				// Create role
+				let userRole = "Google User"
+
 				return {
 					...profile,
 					id: profile.sub,
@@ -37,12 +39,12 @@ export const options = {
 		}),
 	],
 	callbacks: {
-        // server login?
+		// server login?
 		async jwt({ token, user }) {
 			if (user) token.role = user.role;
 			return token;
 		},
-        // client side login?
+		// client side login?
 		async session({ session, token }) {
 			if (session?.user) session.user.role = token.role;
 			return session;
