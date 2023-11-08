@@ -15,6 +15,8 @@ const Member = async () => {
 			<h1>Member Server Session</h1>
 			<p>{session?.user?.email}</p>
 			<p>{session?.user?.role}</p>
+			<br />
+			<p className="text-green-500">You were authenticated server-side!</p>
 		</div>
 	);
 };

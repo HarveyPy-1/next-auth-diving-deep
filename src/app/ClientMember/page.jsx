@@ -24,6 +24,8 @@ const ClientMember = () => {
 			<h1>Member Client Session</h1>
 			<p>{session?.user?.email}</p>
 			<p>{session?.user?.role}</p>
+			<br />
+			<p className="text-green-500">You were authenticated client-side!</p>
 		</div>
 	);
 };

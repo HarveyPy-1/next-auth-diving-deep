@@ -12,7 +12,7 @@ const NavigationBar = async () => {
 					<Link href="/">Home</Link>
 					<Link href="/CreateUser">Create User (Admin)</Link>
 					<Link href="/ClientMember">Member (Client)</Link>
-					<Link href="/Member">Member (Server)</Link>
+					<Link href="/ServerMember">Member (Server)</Link>
 					<Link href="/Public">Public</Link>
 					{session ? <Link href="/api/auth/signout?callbackUrl=/">Logout</Link> : <Link href="/api/auth/signin">Login</Link>}
 				</div>
